@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cloudflare Gmail MX Records</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      html,
+      body {
+        height: 100%;
+      }
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -60px;
+      }
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+      td.success, .table-striped tbody tr:nth-child(odd) td.success {
+        background-color: #dff0d8;
+      }
+      td.error, .table-striped tbody tr:nth-child(odd) td.error {
+        background-color: #f2dede;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="container">
+        <div class="page-header">
+          <h1>Cloudflare Gmail MX Records</h1>
+        </div>
+        <p class="lead">Easily add Gmail's MX Records to any Cloudflare domain.</p>
+        <form class="form-horizontal">
+          <div style="display:none;">
+            <div class="alert">
+                <button type="button" class="close" onclick="$(this).parent().parent().slideUp();">×</button>
+                <span id="creds_message"></span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+              <input type="text" id="inputEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputKey">API Key</label>
+            <div class="controls">
+              <input type="password" id="inputKey" placeholder="API Key">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <button class="btn btn-success" id="creds">Continue</button>
+            </div>
+          </div>
+        </form>
+        <div id="zones" style="display:none;">
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Domain</th>
+                  <th>Has MX records?</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="zones_list">
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/api.js"></script>
+  </body>
+</html>

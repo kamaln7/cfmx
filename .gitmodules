@@ -1,0 +1,3 @@
+[submodule "api/lib"]
+	path = api/lib
+	url = git://github.com/mnaser/CloudFlare-API.git
